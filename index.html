@@ -187,12 +187,12 @@
 <h1 id="git-bash-显示中文"><a href="#git-bash-显示中文" class="headerlink" title="git bash 显示中文"></a>git bash 显示中文</h1><p>git config –global core.quotepath false</p>
 <p>git——.gitignore添加忽略文件不生效<br>原因是.gitignore只能忽略那些原来没有被追踪的文件，如果某些文件已经被纳入了版本管理中，则修改.gitignore是无效的。<br>那么解决方法就是先把本地缓存删除（改变成未被追踪状态），然后再提交，这样就不会出现忽略的文件了。<br>git清除本地缓存命令如下：<br>git rm .env.development –cached<br>在这里插入图片描述<br>git commit -m “Stopped tracking .env.development”<br>在这里插入图片描述<br>现在，你应该可以随意修改.env.development文件，而不会受到git的跟踪了，这样每次提交都不会提交.env.development的修改到git上了</p>
 <p>解决Git中fatal: refusing to merge unrelated histories<br>这是因为两个分支没有取得关系<br>在你操作命令后面加–allow-unrelated-histories<br>例如：<br>git merge master –allow-unrelated-histories<br>同理：<br>git pull origin master –allow-unrelated-histories</p>
-<p>git命令修改远程仓库<br>HTTPS 协议<br>git remote set-url origin <a target="_blank" rel="noopener" href="https://gitee.com/uncleyong/javaAutoTest.git">https://gitee.com/uncleyong/javaAutoTest.git</a><br>SSH 协议<br>git remote set-url origin <a href="mailto:&#x67;&#x69;&#x74;&#x40;&#x67;&#105;&#x74;&#101;&#x65;&#x2e;&#99;&#x6f;&#109;">&#x67;&#x69;&#x74;&#x40;&#x67;&#105;&#x74;&#101;&#x65;&#x2e;&#99;&#x6f;&#109;</a>:uncleyong&#x2F;javaAutoTest.git</p>
+<p>git命令修改远程仓库<br>HTTPS 协议<br>git remote set-url origin <a target="_blank" rel="noopener" href="https://gitee.com/uncleyong/javaAutoTest.git">https://gitee.com/uncleyong/javaAutoTest.git</a><br>SSH 协议<br>git remote set-url origin <a href="mailto:&#103;&#x69;&#116;&#64;&#103;&#x69;&#116;&#x65;&#x65;&#x2e;&#99;&#x6f;&#109;">&#103;&#x69;&#116;&#64;&#103;&#x69;&#116;&#x65;&#x65;&#x2e;&#99;&#x6f;&#109;</a>:uncleyong&#x2F;javaAutoTest.git</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2023/02/10/git%E5%91%BD%E4%BB%A4/" data-id="cldxy30mu000074bq18sb7ukn" data-title="git命令" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2023/02/10/git%E5%91%BD%E4%BB%A4/" data-id="cle6v0deh00002fbq726a892c" data-title="git命令" class="article-share-link">Share</a>
       
       
       
@@ -243,7 +243,9 @@ DEBUG          调试信息
 TRACE          比DEBUG更细粒度的事件信息 
 ALL            最低等级
 </code></pre>
-<h1 id="Oracle"><a href="#Oracle" class="headerlink" title="Oracle"></a>Oracle</h1><h2 id="oracle两张表关联更新"><a href="#oracle两张表关联更新" class="headerlink" title="oracle两张表关联更新"></a>oracle两张表关联更新</h2><p> update TA a set(name, remark)&#x3D;(select b.name, b.remark from TB b where b.id&#x3D;a.id)   where exists(select 1 from TB b where b.id&#x3D;a.id)<br>注意如果不添加后面的exists语句，TA关联不到的行name, remark栏位将被更新为NULL值， 如果name, remark栏位不允许为null，则报错。 这不是我们希望看到的。</p>
+<h1 id="Oracle"><a href="#Oracle" class="headerlink" title="Oracle"></a>Oracle</h1><h2 id="oracle两张表关联更新"><a href="#oracle两张表关联更新" class="headerlink" title="oracle两张表关联更新"></a>oracle两张表关联更新</h2><p> update TA a set(name, remark)&#x3D;(select b.name, b.remark from TB b where b.id&#x3D;a.id)   where exists(select 1 from TB b where b.id&#x3D;a.id)<br>注意如果不添加后面的exists语句，TA关联不到的行name, remark栏位将被更新为NULL值， 如果name, remark栏位不允许为null，则报错。 这不是我们希望看到的。<br><strong>当两张表的关系不是一对一时，用下面的方法</strong></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">merge</span> <span class="keyword">into</span>  a </span><br><span class="line"><span class="keyword">using</span> (<span class="keyword">select</span> <span class="built_in">max</span>(b.zj) zj,b.id <span class="keyword">from</span>  b <span class="keyword">group</span> <span class="keyword">by</span> b.id) table2</span><br><span class="line"><span class="keyword">on</span> (a.id<span class="operator">=</span>b.id)</span><br><span class="line"><span class="keyword">when</span> matched <span class="keyword">then</span></span><br><span class="line"><span class="keyword">update</span> <span class="keyword">set</span> a.zj<span class="operator">=</span>table2.zj</span><br></pre></td></tr></table></figure>
+
 <h2 id="oracle-中，怎么在字符串中指定的位置插入一个字符"><a href="#oracle-中，怎么在字符串中指定的位置插入一个字符" class="headerlink" title="oracle 中，怎么在字符串中指定的位置插入一个字符"></a>oracle 中，怎么在字符串中指定的位置插入一个字符</h2><p>可以用SUBSTR函数，来解决<br>SUBSTR（‘AAAAA’，1，2）||‘ BBB‘||SUBSTR（’AAAAA‘，3）</p>
 <h2 id="oracle修改表字段长度"><a href="#oracle修改表字段长度" class="headerlink" title="oracle修改表字段长度"></a>oracle修改表字段长度</h2><p>alter table 表名 modify 列名 数据类型；<br>alter table bl_yhsz modify  zcmc varchar2(120);</p>
 <h2 id="Oracle-字符串的截取"><a href="#Oracle-字符串的截取" class="headerlink" title="Oracle 字符串的截取"></a>Oracle 字符串的截取</h2><p>substr(String,start,[length])</p>
@@ -297,7 +299,7 @@ ALL            最低等级
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2023/02/09/knowledge/" data-id="cldxy30n5000274bq3mb5hcsk" data-title="knowledge" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2023/02/09/knowledge/" data-id="cle6v0dev00022fbq06hngevy" data-title="knowledge" class="article-share-link">Share</a>
       
       
       
@@ -342,7 +344,7 @@ ALL            最低等级
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/12/20/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/" data-id="cldxy30n7000374bq88wacs8r" data-title="我的第一篇博客文章" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/12/20/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/" data-id="cle6v0dey00032fbq7pg123jb" data-title="我的第一篇博客文章" class="article-share-link">Share</a>
       
       
       
@@ -393,7 +395,7 @@ ALL            最低等级
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/12/20/hello-world/" data-id="cldxy30n2000174bqe1tia1q0" data-title="Hello World" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/12/20/hello-world/" data-id="cle6v0der00012fbqfho04b5t" data-title="Hello World" class="article-share-link">Share</a>
       
       
       

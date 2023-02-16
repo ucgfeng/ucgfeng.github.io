@@ -14,7 +14,7 @@
 <meta property="og:description" content="“潜移默化，人方受教；斥其无知，不如称其易忘。” oracle视图添加注释1234create or replace view org_user_view asselect t.username,t.password from org_users;comment on column org_user_view.usernameis &amp;#x27;用户名;comment on column org_u">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2023-02-09T02:56:05.000Z">
-<meta property="article:modified_time" content="2023-02-10T03:03:50.724Z">
+<meta property="article:modified_time" content="2023-02-16T08:46:38.918Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
   
@@ -112,7 +112,9 @@ DEBUG          调试信息
 TRACE          比DEBUG更细粒度的事件信息 
 ALL            最低等级
 </code></pre>
-<h1 id="Oracle"><a href="#Oracle" class="headerlink" title="Oracle"></a>Oracle</h1><h2 id="oracle两张表关联更新"><a href="#oracle两张表关联更新" class="headerlink" title="oracle两张表关联更新"></a>oracle两张表关联更新</h2><p> update TA a set(name, remark)&#x3D;(select b.name, b.remark from TB b where b.id&#x3D;a.id)   where exists(select 1 from TB b where b.id&#x3D;a.id)<br>注意如果不添加后面的exists语句，TA关联不到的行name, remark栏位将被更新为NULL值， 如果name, remark栏位不允许为null，则报错。 这不是我们希望看到的。</p>
+<h1 id="Oracle"><a href="#Oracle" class="headerlink" title="Oracle"></a>Oracle</h1><h2 id="oracle两张表关联更新"><a href="#oracle两张表关联更新" class="headerlink" title="oracle两张表关联更新"></a>oracle两张表关联更新</h2><p> update TA a set(name, remark)&#x3D;(select b.name, b.remark from TB b where b.id&#x3D;a.id)   where exists(select 1 from TB b where b.id&#x3D;a.id)<br>注意如果不添加后面的exists语句，TA关联不到的行name, remark栏位将被更新为NULL值， 如果name, remark栏位不允许为null，则报错。 这不是我们希望看到的。<br><strong>当两张表的关系不是一对一时，用下面的方法</strong></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">merge</span> <span class="keyword">into</span>  a </span><br><span class="line"><span class="keyword">using</span> (<span class="keyword">select</span> <span class="built_in">max</span>(b.zj) zj,b.id <span class="keyword">from</span>  b <span class="keyword">group</span> <span class="keyword">by</span> b.id) table2</span><br><span class="line"><span class="keyword">on</span> (a.id<span class="operator">=</span>b.id)</span><br><span class="line"><span class="keyword">when</span> matched <span class="keyword">then</span></span><br><span class="line"><span class="keyword">update</span> <span class="keyword">set</span> a.zj<span class="operator">=</span>table2.zj</span><br></pre></td></tr></table></figure>
+
 <h2 id="oracle-中，怎么在字符串中指定的位置插入一个字符"><a href="#oracle-中，怎么在字符串中指定的位置插入一个字符" class="headerlink" title="oracle 中，怎么在字符串中指定的位置插入一个字符"></a>oracle 中，怎么在字符串中指定的位置插入一个字符</h2><p>可以用SUBSTR函数，来解决<br>SUBSTR（‘AAAAA’，1，2）||‘ BBB‘||SUBSTR（’AAAAA‘，3）</p>
 <h2 id="oracle修改表字段长度"><a href="#oracle修改表字段长度" class="headerlink" title="oracle修改表字段长度"></a>oracle修改表字段长度</h2><p>alter table 表名 modify 列名 数据类型；<br>alter table bl_yhsz modify  zcmc varchar2(120);</p>
 <h2 id="Oracle-字符串的截取"><a href="#Oracle-字符串的截取" class="headerlink" title="Oracle 字符串的截取"></a>Oracle 字符串的截取</h2><p>substr(String,start,[length])</p>
@@ -166,7 +168,7 @@ ALL            最低等级
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2023/02/09/knowledge/" data-id="cldxy30n5000274bq3mb5hcsk" data-title="knowledge" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2023/02/09/knowledge/" data-id="cle6v0dev00022fbq06hngevy" data-title="knowledge" class="article-share-link">Share</a>
       
       
       
