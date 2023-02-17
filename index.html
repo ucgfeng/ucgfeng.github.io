@@ -187,12 +187,12 @@
 <h1 id="git-bash-显示中文"><a href="#git-bash-显示中文" class="headerlink" title="git bash 显示中文"></a>git bash 显示中文</h1><p>git config –global core.quotepath false</p>
 <p>git——.gitignore添加忽略文件不生效<br>原因是.gitignore只能忽略那些原来没有被追踪的文件，如果某些文件已经被纳入了版本管理中，则修改.gitignore是无效的。<br>那么解决方法就是先把本地缓存删除（改变成未被追踪状态），然后再提交，这样就不会出现忽略的文件了。<br>git清除本地缓存命令如下：<br>git rm .env.development –cached<br>在这里插入图片描述<br>git commit -m “Stopped tracking .env.development”<br>在这里插入图片描述<br>现在，你应该可以随意修改.env.development文件，而不会受到git的跟踪了，这样每次提交都不会提交.env.development的修改到git上了</p>
 <p>解决Git中fatal: refusing to merge unrelated histories<br>这是因为两个分支没有取得关系<br>在你操作命令后面加–allow-unrelated-histories<br>例如：<br>git merge master –allow-unrelated-histories<br>同理：<br>git pull origin master –allow-unrelated-histories</p>
-<p>git命令修改远程仓库<br>HTTPS 协议<br>git remote set-url origin <a target="_blank" rel="noopener" href="https://gitee.com/uncleyong/javaAutoTest.git">https://gitee.com/uncleyong/javaAutoTest.git</a><br>SSH 协议<br>git remote set-url origin <a href="mailto:&#103;&#x69;&#x74;&#64;&#103;&#x69;&#116;&#101;&#x65;&#46;&#99;&#x6f;&#109;">&#103;&#x69;&#x74;&#64;&#103;&#x69;&#116;&#101;&#x65;&#46;&#99;&#x6f;&#109;</a>:uncleyong&#x2F;javaAutoTest.git</p>
+<p>git命令修改远程仓库<br>HTTPS 协议<br>git remote set-url origin <a target="_blank" rel="noopener" href="https://gitee.com/uncleyong/javaAutoTest.git">https://gitee.com/uncleyong/javaAutoTest.git</a><br>SSH 协议<br>git remote set-url origin <a href="mailto:&#x67;&#x69;&#x74;&#x40;&#x67;&#105;&#x74;&#101;&#101;&#x2e;&#x63;&#111;&#109;">&#x67;&#x69;&#x74;&#x40;&#x67;&#105;&#x74;&#101;&#101;&#x2e;&#x63;&#111;&#109;</a>:uncleyong&#x2F;javaAutoTest.git</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2023/02/10/git%E5%91%BD%E4%BB%A4/" data-id="cle705gb8000103bqhfrlhhtm" data-title="git命令" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2023/02/10/git%E5%91%BD%E4%BB%A4/" data-id="cle83r2y90000j9bqgerhax54" data-title="git命令" class="article-share-link">Share</a>
       
       
       
@@ -227,14 +227,7 @@
     <div class="e-content article-entry" itemprop="articleBody">
       
         <p>“潜移默化，人方受教；斥其无知，不如称其易忘。”</p>
-<h1 id="oracle视图添加注释"><a href="#oracle视图添加注释" class="headerlink" title="oracle视图添加注释"></a>oracle视图添加注释</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">create or replace view org_user_view as</span><br><span class="line">select t.username,t.password from org_users;</span><br><span class="line">comment on column org_user_view.usernameis &#x27;用户名;</span><br><span class="line">comment on column org_user_view.password is &#x27;密码&#x27;; </span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>违反完整约束条件 未找到父项关键字</p>
-</blockquote>
-<p>把要插入表的外键关联给去掉，数据就可以导入进去了</p>
-<h1 id="数据库是NUMBER类型的。"><a href="#数据库是NUMBER类型的。" class="headerlink" title="数据库是NUMBER类型的。"></a>数据库是NUMBER类型的。</h1><p>mybatis 的jdbcType 可以写成NUMERIC</p>
-<h1 id="下载不能用ajax，直接使用window-location-x3D-””"><a href="#下载不能用ajax，直接使用window-location-x3D-””" class="headerlink" title="下载不能用ajax，直接使用window.location&#x3D;””;"></a>下载不能用ajax，直接使用window.location&#x3D;””;</h1><h1 id="Log4J的输出级别按降序排序如下："><a href="#Log4J的输出级别按降序排序如下：" class="headerlink" title="Log4J的输出级别按降序排序如下："></a>Log4J的输出级别按降序排序如下：</h1><pre><code>OFF            最高等级，关闭日志
+<h1 id="Log4J的输出级别按降序排序如下："><a href="#Log4J的输出级别按降序排序如下：" class="headerlink" title="Log4J的输出级别按降序排序如下："></a>Log4J的输出级别按降序排序如下：</h1><pre><code>OFF            最高等级，关闭日志
 FATAL          可能导致应用中止的严重事件错误 
 ERROR          严重错误，主要是程序错误 
 WARN           一般警告 
@@ -262,6 +255,9 @@ ALL            最低等级
 <p>删除原表rowid不是最大rowid的数据，记得关联关系</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">delete</span> <span class="keyword">from</span> a <span class="keyword">where</span> a.rowid <span class="keyword">not</span> <span class="keyword">in</span> (<span class="keyword">select</span> maxrowid <span class="keyword">from</span> temp) <span class="keyword">and</span> a.xxx <span class="keyword">in</span> (<span class="keyword">select</span> xxx <span class="keyword">from</span> temp)</span><br></pre></td></tr></table></figure>
 
+<h2 id="违反完整约束条件-未找到父项关键字"><a href="#违反完整约束条件-未找到父项关键字" class="headerlink" title="违反完整约束条件 未找到父项关键字"></a>违反完整约束条件 未找到父项关键字</h2><p>把要插入表的外键关联给去掉，数据就可以导入进去了</p>
+<h2 id="oracle视图添加注释"><a href="#oracle视图添加注释" class="headerlink" title="oracle视图添加注释"></a>oracle视图添加注释</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">create or replace view org_user_view as</span><br><span class="line">select t.username,t.password from org_users;</span><br><span class="line">comment on column org_user_view.usernameis &#x27;用户名;</span><br><span class="line">comment on column org_user_view.password is &#x27;密码&#x27;; </span><br></pre></td></tr></table></figure>
+
 <h1 id="iframe"><a href="#iframe" class="headerlink" title="iframe"></a>iframe</h1><p>When I first tried this method, I got a lame error about an IFRAME element’s contentWindow property being null.  Ugh.  It didn’t take long to figure out why:  you need to wait until the IFRAME has loaded to get the contentWindow:</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> iframe = <span class="variable language_">document</span>.<span class="title function_">createElement</span>(<span class="string">&#x27;iframe&#x27;</span>);</span><br><span class="line">iframe.<span class="property">onload</span> = <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">	<span class="comment">// contentWindow is set!	</span></span><br><span class="line">&#125;;</span><br><span class="line">iframe.<span class="property">src</span> = <span class="string">&#x27;about:blank&#x27;</span>;</span><br><span class="line"><span class="variable language_">document</span>.<span class="property">body</span>.<span class="title function_">appendChild</span>(iframe);</span><br></pre></td></tr></table></figure>
 <p>Of course you’ll want to add the onload event before setting the src.  If you use the load event to check for the contentWindow property, you’ll be in business!</p>
@@ -273,8 +269,7 @@ ALL            最低等级
 
 <h2 id="java对象的copy"><a href="#java对象的copy" class="headerlink" title="java对象的copy"></a>java对象的copy</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">BeanUtils.copyProperties(源对象,目标对象);</span><br></pre></td></tr></table></figure>
 <h2 id="在实体类里面调用service"><a href="#在实体类里面调用service" class="headerlink" title="在实体类里面调用service"></a>在实体类里面调用service</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">TestServiceImpl test = appContext.getBean(TestServiceImpl.class);</span><br></pre></td></tr></table></figure>
-
-<h1 id="idea-ssm-项目导出成war包"><a href="#idea-ssm-项目导出成war包" class="headerlink" title="idea ssm 项目导出成war包"></a>idea ssm 项目导出成war包</h1><p>1.先选项目结构，点击artifacts,再点+，选择Web Application: Archive–&gt; Empty<br>2.修改项目名，类型，输出文件夹，点击xxx.war，create,点击右边的文件，put into Output Root，apply<br>3.点击Build，选择Build Artifacts，Build。</p>
+<h2 id="下载不能用ajax，直接使用window-location-x3D-””"><a href="#下载不能用ajax，直接使用window-location-x3D-””" class="headerlink" title="下载不能用ajax，直接使用window.location&#x3D;””;"></a>下载不能用ajax，直接使用window.location&#x3D;””;</h2><h1 id="idea-ssm-项目导出成war包"><a href="#idea-ssm-项目导出成war包" class="headerlink" title="idea ssm 项目导出成war包"></a>idea ssm 项目导出成war包</h1><p>1.先选项目结构，点击artifacts,再点+，选择Web Application: Archive–&gt; Empty<br>2.修改项目名，类型，输出文件夹，点击xxx.war，create,点击右边的文件，put into Output Root，apply<br>3.点击Build，选择Build Artifacts，Build。</p>
 <h1 id="tomcat-报400"><a href="#tomcat-报400" class="headerlink" title="tomcat 报400"></a>tomcat 报400</h1><p>java.lang.IllegalArgumentException: 在请求目标中找到无效字符。有效字符在RFC 7230和RFC 3986中定义</p>
 <p>【Tomcat】已解决：java.lang.IllegalArgumentException: 在请求目标中找到无效字符。有效字符在RFC 7230和RFC 3986中定义</p>
 <p>[http-nio-8080-exec-7] org.apache.coyote.http11.Http11Processor.service 解析 HTTP 请求 header 错误<br> 注意：HTTP请求解析错误的进一步发生将记录在DEBUG级别。<br>    java.lang.IllegalArgumentException: 在请求目标中找到无效字符。有效字符在RFC 7230和RFC 3986中定义<br>        at org.apache.coyote.http11.Http11InputBuffer.parseRequestLine(Http11InputBuffer.java:509)<br>        at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:511)<br>        at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)<br>        at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:831)<br>        at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1650)<br>        at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)<br>        at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)<br>        at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)<br>        at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)<br>        at java.lang.Thread.run(Thread.java:748)</p>
@@ -309,7 +304,7 @@ ALL            最低等级
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2023/02/09/knowledge/" data-id="cle705gbb000203bq60rz1g27" data-title="knowledge" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2023/02/09/knowledge/" data-id="cle83r2yi0002j9bqbl4uduk5" data-title="knowledge" class="article-share-link">Share</a>
       
       
       
@@ -354,7 +349,7 @@ ALL            最低等级
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/12/20/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/" data-id="cle705gbd000303bq01nr0aji" data-title="我的第一篇博客文章" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/12/20/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/" data-id="cle83r2yk0003j9bqgxgg6u69" data-title="我的第一篇博客文章" class="article-share-link">Share</a>
       
       
       
@@ -405,7 +400,7 @@ ALL            最低等级
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/12/20/hello-world/" data-id="cle705gb1000003bqd1yt28sr" data-title="Hello World" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/12/20/hello-world/" data-id="cle83r2yf0001j9bq13gx1bve" data-title="Hello World" class="article-share-link">Share</a>
       
       
       
