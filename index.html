@@ -100,7 +100,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2023/02/21/arch%E5%BE%AE%E4%BF%A1%E5%AE%89%E8%A3%85/" data-id="cleo40pta000078bqae3ob95i" data-title="arch微信安装" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2023/02/21/arch%E5%BE%AE%E4%BF%A1%E5%AE%89%E8%A3%85/" data-id="cleo4hyh10000s7bq3fz1bvae" data-title="arch微信安装" class="article-share-link">Share</a>
       
       
       
@@ -228,13 +228,13 @@
 <h1 id="git-bash-显示中文"><a href="#git-bash-显示中文" class="headerlink" title="git bash 显示中文"></a>git bash 显示中文</h1><p>git config –global core.quotepath false</p>
 <h1 id="git——-gitignore添加忽略文件不生效"><a href="#git——-gitignore添加忽略文件不生效" class="headerlink" title="git——.gitignore添加忽略文件不生效"></a>git——.gitignore添加忽略文件不生效</h1><p>原因是.gitignore只能忽略那些原来没有被追踪的文件，如果某些文件已经被纳入了版本管理中，则修改.gitignore是无效的。<br>那么解决方法就是先把本地缓存删除（改变成未被追踪状态），然后再提交，这样就不会出现忽略的文件了。<br>git清除本地缓存命令如下：<br>git rm .env.development –cached<br>在这里插入图片描述<br>git commit -m “Stopped tracking .env.development”<br>在这里插入图片描述<br>现在，你应该可以随意修改.env.development文件，而不会受到git的跟踪了，这样每次提交都不会提交.env.development的修改到git上了</p>
 <p>解决Git中fatal: refusing to merge unrelated histories<br>这是因为两个分支没有取得关系<br>在你操作命令后面加–allow-unrelated-histories<br>例如：<br>git merge master –allow-unrelated-histories<br>同理：<br>git pull origin master –allow-unrelated-histories</p>
-<h1 id="git命令修改远程仓库"><a href="#git命令修改远程仓库" class="headerlink" title="git命令修改远程仓库"></a>git命令修改远程仓库</h1><p>HTTPS 协议<br>git remote set-url origin <a target="_blank" rel="noopener" href="https://gitee.com/uncleyong/javaAutoTest.git">https://gitee.com/uncleyong/javaAutoTest.git</a><br>SSH 协议<br>git remote set-url origin <a href="mailto:&#x67;&#105;&#x74;&#x40;&#x67;&#105;&#116;&#x65;&#x65;&#x2e;&#x63;&#111;&#109;">&#x67;&#105;&#x74;&#x40;&#x67;&#105;&#116;&#x65;&#x65;&#x2e;&#x63;&#111;&#109;</a>:uncleyong&#x2F;javaAutoTest.git</p>
+<h1 id="git命令修改远程仓库"><a href="#git命令修改远程仓库" class="headerlink" title="git命令修改远程仓库"></a>git命令修改远程仓库</h1><p>HTTPS 协议<br>git remote set-url origin <a target="_blank" rel="noopener" href="https://gitee.com/uncleyong/javaAutoTest.git">https://gitee.com/uncleyong/javaAutoTest.git</a><br>SSH 协议<br>git remote set-url origin <a href="mailto:&#103;&#x69;&#x74;&#x40;&#x67;&#x69;&#x74;&#101;&#x65;&#x2e;&#x63;&#111;&#109;">&#103;&#x69;&#x74;&#x40;&#x67;&#x69;&#x74;&#101;&#x65;&#x2e;&#x63;&#111;&#109;</a>:uncleyong&#x2F;javaAutoTest.git</p>
 <h1 id="解决每次git-pull、git-push都需要输入账号和密码的问题"><a href="#解决每次git-pull、git-push都需要输入账号和密码的问题" class="headerlink" title="解决每次git pull、git push都需要输入账号和密码的问题"></a>解决每次git pull、git push都需要输入账号和密码的问题</h1><p>git config –global credential.helper store<br>当前仓库不加–global<br>这次还要输入，下次就不用了</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2023/02/10/git%E5%91%BD%E4%BB%A4/" data-id="cleo40ptj000178bqhy40h92f" data-title="git命令" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2023/02/10/git%E5%91%BD%E4%BB%A4/" data-id="cleo4hyh70001s7bq7lph2rlj" data-title="git命令" class="article-share-link">Share</a>
       
       
       
@@ -340,7 +340,8 @@ ALL            最低等级
 <h2 id="多选框默认选中"><a href="#多选框默认选中" class="headerlink" title="多选框默认选中"></a>多选框默认选中</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">&quot;#id&quot;</span>).<span class="title function_">setValue</span>(<span class="literal">true</span>);</span><br></pre></td></tr></table></figure>
 <h2 id="移除属性"><a href="#移除属性" class="headerlink" title="移除属性"></a>移除属性</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;id&quot;</span>).<span class="title function_">removeAttribute</span>(<span class="string">&quot;属性&quot;</span>);</span><br><span class="line">$(<span class="string">&quot;#id&quot;</span>).<span class="title function_">removeAttr</span>(<span class="string">&quot;属性&quot;</span>);</span><br></pre></td></tr></table></figure>
 <h2 id="弹出确认框"><a href="#弹出确认框" class="headerlink" title="弹出确认框"></a>弹出确认框</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$.prompt();</span><br></pre></td></tr></table></figure>
-
+<h2 id="向数组中添加元素"><a href="#向数组中添加元素" class="headerlink" title="向数组中添加元素"></a>向数组中添加元素</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var array = [];</span><br><span class="line">array.push(1);</span><br><span class="line">array.push(1);</span><br><span class="line">array = [1,1];</span><br></pre></td></tr></table></figure>
+<p>添加相同的元素，不会被覆盖</p>
 <h1 id="mybatis"><a href="#mybatis" class="headerlink" title="mybatis"></a>mybatis</h1><h2 id="转义"><a href="#转义" class="headerlink" title="转义"></a>转义</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;![CDATA[ 字段 &lt;&gt; 0 ]]&gt;</span><br></pre></td></tr></table></figure>
 <h2 id="sql数量和list数量不一致"><a href="#sql数量和list数量不一致" class="headerlink" title="sql数量和list数量不一致"></a>sql数量和list数量不一致</h2><p>在sql语句里面添加查询主键。如：sys_guid()</p>
 <h2 id="数据库类型为NUMBER"><a href="#数据库类型为NUMBER" class="headerlink" title="数据库类型为NUMBER"></a>数据库类型为NUMBER</h2><p>在mybatis里面jdbcType可以写成NUMERIC</p>
@@ -348,7 +349,7 @@ ALL            最低等级
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2023/02/09/knowledge/" data-id="cleo40ptq000478bq3qgxf3fg" data-title="knowledge" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2023/02/09/knowledge/" data-id="cleo4hyhc0003s7bq2tdgbcg5" data-title="knowledge" class="article-share-link">Share</a>
       
       
       
@@ -391,7 +392,7 @@ ALL            最低等级
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/12/20/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/" data-id="cleo40pto000378bqgzfa8x01" data-title="我的第一篇博客文章" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/12/20/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/" data-id="cleo4hyhe0004s7bq9rba5fdr" data-title="我的第一篇博客文章" class="article-share-link">Share</a>
       
       
       
@@ -442,7 +443,7 @@ ALL            最低等级
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/12/20/hello-world/" data-id="cleo40ptm000278bqaiy194rg" data-title="Hello World" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/12/20/hello-world/" data-id="cleo4hyha0002s7bqdr0g2bnf" data-title="Hello World" class="article-share-link">Share</a>
       
       
       
