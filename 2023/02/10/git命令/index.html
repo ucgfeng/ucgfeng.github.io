@@ -189,13 +189,13 @@
 <h1 id="git-bash-显示中文"><a href="#git-bash-显示中文" class="headerlink" title="git bash 显示中文"></a>git bash 显示中文</h1><p>git config –global core.quotepath false</p>
 <h1 id="git——-gitignore添加忽略文件不生效"><a href="#git——-gitignore添加忽略文件不生效" class="headerlink" title="git——.gitignore添加忽略文件不生效"></a>git——.gitignore添加忽略文件不生效</h1><p>原因是.gitignore只能忽略那些原来没有被追踪的文件，如果某些文件已经被纳入了版本管理中，则修改.gitignore是无效的。<br>那么解决方法就是先把本地缓存删除（改变成未被追踪状态），然后再提交，这样就不会出现忽略的文件了。<br>git清除本地缓存命令如下：<br>git rm .env.development –cached<br>在这里插入图片描述<br>git commit -m “Stopped tracking .env.development”<br>在这里插入图片描述<br>现在，你应该可以随意修改.env.development文件，而不会受到git的跟踪了，这样每次提交都不会提交.env.development的修改到git上了</p>
 <p>解决Git中fatal: refusing to merge unrelated histories<br>这是因为两个分支没有取得关系<br>在你操作命令后面加–allow-unrelated-histories<br>例如：<br>git merge master –allow-unrelated-histories<br>同理：<br>git pull origin master –allow-unrelated-histories</p>
-<h1 id="git命令修改远程仓库"><a href="#git命令修改远程仓库" class="headerlink" title="git命令修改远程仓库"></a>git命令修改远程仓库</h1><p>HTTPS 协议<br>git remote set-url origin <a target="_blank" rel="noopener" href="https://gitee.com/uncleyong/javaAutoTest.git">https://gitee.com/uncleyong/javaAutoTest.git</a><br>SSH 协议<br>git remote set-url origin <a href="mailto:&#103;&#x69;&#116;&#x40;&#103;&#x69;&#116;&#101;&#x65;&#46;&#x63;&#111;&#109;">&#103;&#x69;&#116;&#x40;&#103;&#x69;&#116;&#101;&#x65;&#46;&#x63;&#111;&#109;</a>:uncleyong&#x2F;javaAutoTest.git</p>
+<h1 id="git命令修改远程仓库"><a href="#git命令修改远程仓库" class="headerlink" title="git命令修改远程仓库"></a>git命令修改远程仓库</h1><p>HTTPS 协议<br>git remote set-url origin <a target="_blank" rel="noopener" href="https://gitee.com/uncleyong/javaAutoTest.git">https://gitee.com/uncleyong/javaAutoTest.git</a><br>SSH 协议<br>git remote set-url origin <a href="mailto:&#103;&#105;&#x74;&#x40;&#x67;&#105;&#116;&#101;&#101;&#x2e;&#x63;&#x6f;&#109;">&#103;&#105;&#x74;&#x40;&#x67;&#105;&#116;&#101;&#101;&#x2e;&#x63;&#x6f;&#109;</a>:uncleyong&#x2F;javaAutoTest.git</p>
 <h1 id="解决每次git-pull、git-push都需要输入账号和密码的问题"><a href="#解决每次git-pull、git-push都需要输入账号和密码的问题" class="headerlink" title="解决每次git pull、git push都需要输入账号和密码的问题"></a>解决每次git pull、git push都需要输入账号和密码的问题</h1><p>git config –global credential.helper store<br>当前仓库不加–global<br>这次还要输入，下次就不用了</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2023/02/10/git%E5%91%BD%E4%BB%A4/" data-id="clery4j9o00012ebq6tx00j42" data-title="git命令" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2023/02/10/git%E5%91%BD%E4%BB%A4/" data-id="cleryd5130001yabqdpgkbay3" data-title="git命令" class="article-share-link">Share</a>
       
       
       
