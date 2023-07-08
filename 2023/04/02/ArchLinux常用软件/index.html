@@ -1,0 +1,92 @@
+<!DOCTYPE html><html lang="en" theme-mode="dark"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>ArchLinux常用软件 | ffc's blog</title><link rel="icon" type="image/x-icon" href="/favicon.ico"><script>var config = {"root":"/","search":{"preload":false,"activeHolder":"Enter here","blurHolder":"Search","noResult":"Data \"$0\" not found"},"code":{"codeInfo":"$0 - $1 lines","copy":"copy","copyFinish":"copied","expand":"expand"}}</script><script src="//unpkg.com/mermaid@9.2.2/dist/mermaid.min.js"></script><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lightgallery.css"><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lg-zoom.css"><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lg-thumbnail.css"><link type="text/css" rel="stylesheet" href="/lib/fontawesome/brands.min.css"><link type="text/css" rel="stylesheet" href="/lib/fontawesome/fontawesome.min.css"><link rel="stylesheet" href="/css/arknights.css"><script>if (window.localStorage.getItem('theme-mode') === 'light') document.documentElement.setAttribute('theme-mode', 'light')
+if (window.localStorage.getItem('theme-mode') === 'dark') document.documentElement.setAttribute('theme-mode', 'dark')</script><style>@font-face {
+ font-family: BenderLight;
+ src: local('Bender'), url("/font/BenderLight.ttf");
+}
+@font-face {
+ font-family: 'JetBrains Mono';
+ src: local('JetBrains Mono'), url('/font/JetBrainsMono-Regular.woff2') format('woff2');
+}
+@font-face {
+ font-family: 'Font Awesome 6 Brands';
+ src: local('Font Awesome 6 Brands'), url('/lib/fontawesome/fa-brands.woff2') format('woff2');
+}
+@font-face {
+ font-family: 'Font Awesome 6 Free';
+ src: local('Font Awesome 6 Free'), url('/lib/fontawesome/fa-regular.woff2') format('woff2');
+}</style><style>:root {
+  --dark-background: url('https://ak.hypergryph.com/assets/index/images/ak/pc/bk.jpg');
+  --light-background: url('/img/bk.jpg');
+}</style><meta name="generator" content="Hexo 6.3.0"></head><body><div class="loading" style="opacity: 0"><div class="loadingBar left"></div><div class="loadingBar right"></div></div><main><header class="closed"><nav><div class="navBtn hide"><i class="navBtnIcon"><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span></i></div><div class="navItem" id="search-header"><span class="navItemTitle"><input autocomplete="off" autocorrect="off" autocapitalize="none" placeholder="Search" spellcheck="false" maxlength="50" type="text" id="search-input"></span></div><div class="navItem" id="search-holder"></div><div class="search-popup"><div id="search-result"></div></div><ol class="navContent"><li class="navItem"><a class="navBlock" href="/"><span class="navItemTitle">Home</span></a></li><li class="navItem" matchdata="categories,tags"><a class="navBlock" href="/archives/"><span class="navItemTitle">Archives</span></a></li></ol></nav></header><article><div id="post-bg"><div id="post-title"><h1>ArchLinux常用软件</h1><div id="post-info"><span>First Post: <div class="control"><time datetime="2023-04-01T16:00:00.000Z" id="date"> 2023-04-02</time></div></span><br><span>Last Update: <div class="control"><time datetime="2023-07-08T09:36:10.116Z" id="updated"> 2023-07-08</time></div></span></div></div><hr><div id="post-content"><ul>
+<li>终端编辑器: vim</li>
+<li>aur包管理器: yay</li>
+<li>图形界面编辑器: gedit</li>
+<li>网络连接: iw, wpa_ supplicant和dhcpcd</li>
+<li>电池优化: tlp</li>
+<li>声音管理: alsa-utils, pulseaudio, pavucontr</li>
+<li>图形界面服务: xorg、 xinit</li>
+<li>通知：dunst</li>
+<li>剪贴板：copyq</li>
+<li>搜索栏:dmenu(能快速搜索打开某个应用，一步到位，配合i3wm)</li>
+<li>顶部栏: polybar</li>
+<li>i3壁纸管理: feh (装gnome和kde这种有自带的工具，不需要它这个)</li>
+<li>xorg渲染工具: picom (gnome和kde这种也不需要它)</li>
+<li>终端模拟器: gnome-terminal (gnome桌面默认终端模拟器)、alacritty (使用GPU加速，可定制)</li>
+<li>shell: fish (比默认的bash强大好用，但是和bash脚本不兼容)、zsh (比bash 好用，不如fish，需要折腾配置后才能达到和fish类似的效果，好处是兼容bash脚本)</li>
+<li>终端下的文件浏览器: ranger (非常强大)</li>
+<li>图片查看和编辑:gthumb.</li>
+<li>类似Ps的图片编辑器:gimp</li>
+<li>SVG编辑器: inkscape</li>
+<li>视频剪辑:kdenlive(类似Pr)， openshot(稍微简单点)</li>
+<li>录屏和直播软件: obs</li>
+<li>摄像头:摄像头驱动自带fplay和ffmpeg图形界面操作的有cheese</li>
+<li>树状列出各级目录: tree</li>
+<li>linux远程操作: ssh</li>
+<li>输入法框架: fcitx或者ibus (gnome自带ibus)</li>
+<li>输入法: sunpinyin</li>
+<li>Markdown编辑器: typora</li>
+<li>C语言编译器: gcc</li>
+<li>项目构建和管理: make , cmake, maven, npm</li>
+<li>C++编译器: g++</li>
+<li>调试器: gdb</li>
+<li>虚拟机: virtualbox</li>
+<li>百度网盘: baidunetdisk</li>
+<li>数据库: mariadb (mysql的开源版)</li>
+<li>浏览器: chromium (谷歌浏览器开源版)- 键盘操作chromium: vimium插件</li>
+<li>视频播放器: vlc</li>
+<li>项目管理和版本控制器: git. subversion</li>
+<li>制作windows启动盘: woeusb</li>
+<li>发现电脑内的其他系统: os-prober</li>
+<li>访问远程Windows桌 面: rdesktop</li>
+<li>dos模拟器: dosemu</li>
+<li>原型工具: pencil</li>
+<li>路由跟踪: traceroute</li>
+<li>nslookup: arch在 dnsutils包里面，其他发行版应该在bind-utils里。</li>
+<li>网络工具: ifconfig、 route在net-tools中， nslookup,dig在dnsutils中，ftp,telnet等 在inetutils中,ip命令在iproute2中。</li>
+<li>手机投屏到电脑: scrcpy .</li>
+<li>电脑投屏到手机: vnc系列或者rdp系列，vnc服务端(电脑)x11vnc;客户端(手机)可以去应用商店搜vnc，vncviewer，”bVNC Free”。</li>
+<li>处理deb包: debtap</li>
+<li>终端256色打印图片: catimg</li>
+<li>图片转文本: chafa (有彩色，比catimg更清晰)</li>
+<li>图片转ASCII: jp2a</li>
+<li>下载器: uget， aria2</li>
+<li>安装terminfo: tic</li>
+</ul>
+<div id="paginator"></div></div><div id="post-footer"><div id="pages"><div class="footer-link" style="width: 50%;text-align:right;border-right:1px #fe2 solid"><a href="/2023/05/19/docker/">← Next docker</a></div><div class="footer-link" style="width: 50%;right:1px;border-left:1px #fe2 solid"><a href="/2023/03/25/%E5%8D%9A%E5%AE%A2%E4%BB%93%E5%BA%93%E5%85%8B%E9%9A%86/">博客仓库克隆 Prev →</a></div></div></div></div><div class="bottom-btn"><div><a id="to-top" onClick="scrolls.scrolltop();" title="To Top" style="opacity: 0; display: none;">∧</a><a id="to-index" href="#toc-div" title="To Catalog">≡</a><a id="color-mode" onClick="colorMode.change()" title="Change Theme"></a></div></div></article><aside><div id="about"><a href="/" id="logo"><img src="https://ak.hypergryph.com/assets/index/images/ak/pc/faction/1.png" alt="Logo"></a><h1 id="Dr"><a href="/">John Doe</a></h1><div id="description"><p></p></div></div><div id="aside-block"></div><footer><nobr>Published with <a target="_blank" rel="noopener" href="http://hexo.io">Hexo</a></nobr><wbr><nobr> Theme <a target="_blank" rel="noopener" href="https://github.com/Yue-plus/hexo-theme-arknights">Arknights</a></nobr><wbr><nobr>by <a target="_blank" rel="noopener" href="https://github.com/Yue-plus">Yue_plus</a></nobr></footer></aside></main><canvas id="canvas-dust"></canvas><script src="/js/search.js"></script><script src="/js/arknights.js"></script><script src="//unpkg.com/lightgallery@2.7.1/lightgallery.min.js"></script><script src="//unpkg.com/lightgallery@2.7.1/plugins/zoom/lg-zoom.min.js"></script><script src="//unpkg.com/lightgallery@2.7.1/plugins/thumbnail/lg-thumbnail.min.js"></script><script src="/js/pjax.js"></script><script class="pjax-js">reset= () => {code.findCode();
+document.querySelector('.lg-container')?.remove()
+lightGallery(document.getElementById('post-bg'), {
+  plugins: [lgZoom,lgThumbnail],
+  selector: '.item-img'})}</script><script>window.addEventListener("load",() => {pjax = new Pjax({
+ cacheBust: false,
+ selectors: ['title','article','#aside-block','.pjax-js'],
+ switches: {'article': Pjax.switches.sideBySide},
+ switchesOptions: {
+   'article': {
+     classNames: {
+       remove: "pjax-out",
+       add: "pjax-in"
+     }
+   }
+ }
+});
+document.addEventListener("pjax:complete", reset);reset()})</script></body></html>
